@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path=require('path');
 const express =require('express');
 const bodyParser=require('body-parser');
@@ -9,7 +10,7 @@ const PageNotFoundController=require('./controller/error');
 // const mongoConnect=require('./util/database').mongoConnect;
 const User=require('./models/user');
 
-const MONGODB_URI='mongodb+srv://yashpalchoudhary967:isek0sAaNjKHsYr9@cluster0.3c99yvy.mongodb.net/shop?retryWrites=true&w=majority';
+const MONGODB_URI=process.env.MONGODB_URI;
 
 const app=express();
 const store=new MongoDBStore({
